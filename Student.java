@@ -30,7 +30,8 @@ public class Student implements Comparable {
 	 * student average mark
 	 */
 	private double avgMark;
-
+	public Student()
+	{}
 	public Student(int id, String fullName, Date birthDate, double avgMark) {
 		this.id = id;
 		this.fullName = fullName;

@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.*;
 
 /**
  * A fix-sized array of students
@@ -27,15 +28,15 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudents() throws IllegalArgumentException{
 		//d your implementation here
-		for( i=0;i<length;i++)
+		/*for( i=0;i<length;i++)
 		{
 			Scanner sc=new Scanner(System.in);
 			int id=sc.nextInt();
-			String fullName=sc.nextString();
+			String fullName=sc.next();
 			Date birthDate=sc.nextDate();
 			double avgMark=sc.nextInt();
 			students[i]=new Student(id,fullName,birthDate,avgMark);
-		}
+		}*/
 			return students;
 	}
 
@@ -54,53 +55,53 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
+		Student s1=new Student();
+		s1.setId(students[index].getId());
+		s1.setFullName(students[index].getFullName());
+		s1.setBirthDate(students[index].getBirthDate());
+		s1.setAvgMark(students[index].getAvgMark());
 		
-		students[index].getId();
-		students[index].getFullName();
-		students[index].getBirthDate();
-		students[index].getAvgMark();
-		
-		return students;
+		return s1;
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-		students[index].setId(getId());
-		students[index].setFullName(getFullName());
-		students[index].setBirthDate(getBirthDate());
-		students[index].setAvgMark(getAvgMark());
+		students[index].setId(student.getId());
+		students[index].setFullName(student.getFullName());
+		students[index].setBirthDate(student.getBirthDate());
+		students[index].setAvgMark(student.getAvgMark());
 		
 	}
 
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
-		students a[]=new students[length+1];
-		a[0].setId(student.setId(getId()));
-		a[0].setId(student.setFullName(getFullName()));
-		a[0].setId(student.setBirthdate(getBirthDate()));
-		a[0].setId(student.setAvgMark(getAvgMark()));
+		Student a[]=new Student[length+1];
+		a[0].setId(student.getId());
+		a[0].setFullName(student.getFullName());
+		a[0].setBirthDate(student.getBirthDate());
+		a[0].setAvgMark(student.getAvgMark());
 		for(j=1;j<length+1;j++)
 		{
-			a[j].setId(students[j-1].setId(getId()));
-			a[j].setId(students[j-1].setFullName(getFullName()));
-			a[j].setId(students[j-1].setBirthdate(getBirthDate()));
-			a[j].setId(students[j-1].setAvgMark(getAvgMark()));
+			a[j].setId(students[j-1].getId());
+			a[j].setFullName(students[j-1].getFullName());
+			a[j].setBirthDate(students[j-1].getBirthDate());
+			a[j].setAvgMark(students[j-1].getAvgMark());
 		}
 		students=a;
-		length=students.length();
+		length=students.length;
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-		students b[]=new students[length+1];
-		students=b;
-		students[length].setId(student.getId());
-		students[length].setId(student.getFullName());
-		students[length].setId(student.getBirthDate());
-		students[length].setId(student.getAvgMark());
+		Student b[]=new Student[length+1];
+		
+		b[length].getId();
+		b[length].getFullName();
+		b[length].getBirthDate();
+		b[length].getAvgMark();
 		students=b;
 	}
 
